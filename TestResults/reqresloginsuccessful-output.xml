@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220605 20:25:25.624" rpa="false" schemaversion="3">
+<suite id="s1" name="Reqresloginsuccessful" source="C:\Users\vanit\PycharmProjects\CassiniSystemsInterview\Tests\reqresloginsuccessful.robot">
+<test id="s1-t1" name="Verify login is Successful" line="8">
+<kw name="POST" library="REST">
+<var>${jsonGet}</var>
+<arg>api/login</arg>
+<arg>{ "email": "eve.holt@reqres.in", "password": "cityslicka" }</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<msg timestamp="20220605 20:25:25.797" level="INFO">${jsonGet} = {'seconds': 0.098954, 'status': 200, 'reason': 'OK', 'body': {'token': 'QpwL5tke4Pnpja7X4'}, 'headers': {'Date': 'Sun, 05 Jun 2022 19:25:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Co...</msg>
+<status status="PASS" starttime="20220605 20:25:25.687" endtime="20220605 20:25:25.797"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${status}</var>
+<arg>${jsonGet}</arg>
+<arg>status</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220605 20:25:25.797" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20220605 20:25:25.797" endtime="20220605 20:25:25.797"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220605 20:25:25.797" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220605 20:25:25.797" endtime="20220605 20:25:25.797"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${jsonGet}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220605 20:25:25.797" level="INFO">${jsonGet} = {'seconds': 0.098954, 'status': 200, 'reason': 'OK', 'body': {'token': 'QpwL5tke4Pnpja7X4'}, 'headers': {'Date': 'Sun, 05 Jun 2022 19:25:25 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Co...</msg>
+<status status="PASS" starttime="20220605 20:25:25.797" endtime="20220605 20:25:25.797"/>
+</kw>
+<doc>Post login</doc>
+<status status="PASS" starttime="20220605 20:25:25.687" endtime="20220605 20:25:25.797"/>
+</test>
+<test id="s1-t2" name="Verify login is Successful with any password" line="15">
+<kw name="POST" library="REST">
+<var>${jsonGet}</var>
+<arg>api/login</arg>
+<arg>{ "email": "eve.holt@reqres.in", "password": "testpassword" }</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<msg timestamp="20220605 20:25:25.937" level="INFO">${jsonGet} = {'seconds': 0.102938, 'status': 200, 'reason': 'OK', 'body': {'token': 'QpwL5tke4Pnpja7X4'}, 'headers': {'Date': 'Sun, 05 Jun 2022 19:25:26 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Co...</msg>
+<status status="PASS" starttime="20220605 20:25:25.812" endtime="20220605 20:25:25.937"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${status}</var>
+<arg>${jsonGet}</arg>
+<arg>status</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220605 20:25:25.937" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20220605 20:25:25.937" endtime="20220605 20:25:25.937"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status}</arg>
+<arg>200</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220605 20:25:25.953" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220605 20:25:25.937" endtime="20220605 20:25:25.953"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${jsonGet}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220605 20:25:25.953" level="INFO">${jsonGet} = {'seconds': 0.102938, 'status': 200, 'reason': 'OK', 'body': {'token': 'QpwL5tke4Pnpja7X4'}, 'headers': {'Date': 'Sun, 05 Jun 2022 19:25:26 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Co...</msg>
+<status status="PASS" starttime="20220605 20:25:25.953" endtime="20220605 20:25:25.953"/>
+</kw>
+<doc>login is successful</doc>
+<status status="PASS" starttime="20220605 20:25:25.812" endtime="20220605 20:25:25.953"/>
+</test>
+<test id="s1-t3" name="Verify the token is valid" line="22">
+<kw name="Get From Dictionary" library="Collections">
+<var>${body}</var>
+<arg>${jsonGet}</arg>
+<arg>body</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220605 20:25:25.953" level="INFO">${body} = {'token': 'QpwL5tke4Pnpja7X4'}</msg>
+<status status="PASS" starttime="20220605 20:25:25.953" endtime="20220605 20:25:25.953"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${body['token']}</arg>
+<arg>QpwL5tke4Pnpja7X4</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220605 20:25:25.953" endtime="20220605 20:25:25.968"/>
+</kw>
+<doc>login is successful</doc>
+<status status="PASS" starttime="20220605 20:25:25.953" endtime="20220605 20:25:25.968"/>
+</test>
+<status status="PASS" starttime="20220605 20:25:25.624" endtime="20220605 20:25:25.968"/>
+</suite>
+<statistics>
+<total>
+<stat pass="3" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="3" fail="0" skip="0" id="s1" name="Reqresloginsuccessful">Reqresloginsuccessful</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

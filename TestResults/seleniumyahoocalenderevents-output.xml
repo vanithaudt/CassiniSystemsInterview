@@ -1,0 +1,281 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220606 17:14:30.343" rpa="false" schemaversion="3">
+<suite id="s1" name="Seleniumyahoocalenderevents" source="C:\Users\vanit\PycharmProjects\CassiniSystemsInterview\Tests\seleniumyahoocalenderevents.robot">
+<test id="s1-t1" name="setup driver" line="8">
+<kw name="Setup Driver" library="yahoo">
+<arg>driverpath=C:/Users/vanit/Downloads/chromedriver_win32/chromedriver.exe</arg>
+<doc>setup driver
+:return: n/a</doc>
+<status status="PASS" starttime="20220606 17:14:34.457" endtime="20220606 17:15:08.828"/>
+</kw>
+<kw name="Login" library="yahoo">
+<doc>login to yahoo
+:return: n/a</doc>
+<status status="PASS" starttime="20220606 17:15:08.828" endtime="20220606 17:15:44.614"/>
+</kw>
+<kw name="Go To Market Data" library="yahoo">
+<doc>navigate to Market Data section
+:return:</doc>
+<status status="PASS" starttime="20220606 17:15:44.614" endtime="20220606 17:16:19.427"/>
+</kw>
+<kw name="Read From Calendar Events" library="yahoo">
+<var>${calenderEvents}</var>
+<doc>read from calender and returns a dictonary of event calendar
+:return: dictionary</doc>
+<msg timestamp="20220606 17:16:24.428" level="INFO">${calenderEvents} = [{'startdatetime': '2022-06-05T00:00:00.000-04:00', 'economiceventcount': 27, 'ipoinfocount': 0, 'splitscount': 0, 'date': 5, 'month': 5, 'day': 0, 'year': 2022, 'earningscount': 1}, {'startdatetime':...</msg>
+<status status="PASS" starttime="20220606 17:16:19.428" endtime="20220606 17:16:24.428"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${calenderEvents}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220606 17:16:24.430" level="INFO">${calenderEvents} = [{'startdatetime': '2022-06-05T00:00:00.000-04:00', 'economiceventcount': 27, 'ipoinfocount': 0, 'splitscount': 0, 'date': 5, 'month': 5, 'day': 0, 'year': 2022, 'earningscount': 1}, {'startdatetime':...</msg>
+<status status="PASS" starttime="20220606 17:16:24.429" endtime="20220606 17:16:24.430"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${calenderEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:24.431" level="INFO">[{'startdatetime': '2022-06-05T00:00:00.000-04:00', 'economiceventcount': 27, 'ipoinfocount': 0, 'splitscount': 0, 'date': 5, 'month': 5, 'day': 0, 'year': 2022, 'earningscount': 1}, {'startdatetime': '2022-06-06T00:00:00.000-04:00', 'economiceventcount': 45, 'ipoinfocount': 1, 'splitscount': 41, 'date': 6, 'month': 5, 'day': 1, 'year': 2022, 'earningscount': 44}, {'startdatetime': '2022-06-07T00:00:00.000-04:00', 'economiceventcount': 75, 'ipoinfocount': 1, 'splitscount': 36, 'date': 7, 'month': 5, 'day': 2, 'year': 2022, 'earningscount': 21}, {'startdatetime': '2022-06-08T00:00:00.000-04:00', 'economiceventcount': 87, 'ipoinfocount': 1, 'splitscount': 8, 'date': 8, 'month': 5, 'day': 3, 'year': 2022, 'earningscount': 24}, {'startdatetime': '2022-06-09T00:00:00.000-04:00', 'economiceventcount': 62, 'ipoinfocount': 0, 'splitscount': 3, 'date': 9, 'month': 5, 'day': 4, 'year': 2022, 'earningscount': 16}, {'startdatetime': '2022-06-10T00:00:00.000-04:00', 'economiceventcount': 74, 'ipoinfocount': 1, 'splitscount': 14, 'date': 10, 'month': 5, 'day': 5, 'year': 2022, 'earningscount': 1}, {'startdatetime': '2022-06-11T00:00:00.000-04:00', 'economiceventcount': 0, 'ipoinfocount': 0, 'splitscount': 0, 'date': 11, 'month': 5, 'day': 6, 'year': 2022, 'earningscount': 0}]</msg>
+<status status="PASS" starttime="20220606 17:16:24.430" endtime="20220606 17:16:24.431"/>
+</kw>
+<kw name="Driver Close" library="yahoo">
+<doc>close driver
+:return: n/a</doc>
+<status status="PASS" starttime="20220606 17:16:24.432" endtime="20220606 17:16:26.208"/>
+</kw>
+<doc>setup driver</doc>
+<status status="PASS" starttime="20220606 17:14:34.455" endtime="20220606 17:16:26.208"/>
+</test>
+<test id="s1-t2" name="verify calender events" line="18">
+<for flavor="IN">
+<var>${calEvents}</var>
+<value>@{calenderEvents}</value>
+<iter>
+<var name="${calEvents}">{'startdatetime': '2022-06-05T00:00:00.000-04:00', 'economiceventcount': 27, 'ipoinfocount': 0, 'splitscount': 0, 'date': 5, 'month': 5, 'day': 0, 'year': 2022, 'earningscount': 1}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${calEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:28.745" level="INFO">{'startdatetime': '2022-06-05T00:00:00.000-04:00', 'economiceventcount': 27, 'ipoinfocount': 0, 'splitscount': 0, 'date': 5, 'month': 5, 'day': 0, 'year': 2022, 'earningscount': 1}</msg>
+<status status="PASS" starttime="20220606 17:16:28.745" endtime="20220606 17:16:28.745"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['economiceventcount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.745" endtime="20220606 17:16:28.745"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['ipoinfocount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.745" endtime="20220606 17:16:28.745"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['splitscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.745" endtime="20220606 17:16:28.760"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['earningscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.760" endtime="20220606 17:16:28.760"/>
+</kw>
+<status status="PASS" starttime="20220606 17:16:28.745" endtime="20220606 17:16:28.760"/>
+</iter>
+<iter>
+<var name="${calEvents}">{'startdatetime': '2022-06-06T00:00:00.000-04:00', 'economiceventcount': 45, 'ipoinfocount': 1, 'splitscount': 41, 'date': 6, 'month': 5, 'day': 1, 'year': 2022, 'earningscount': 44}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${calEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:28.760" level="INFO">{'startdatetime': '2022-06-06T00:00:00.000-04:00', 'economiceventcount': 45, 'ipoinfocount': 1, 'splitscount': 41, 'date': 6, 'month': 5, 'day': 1, 'year': 2022, 'earningscount': 44}</msg>
+<status status="PASS" starttime="20220606 17:16:28.760" endtime="20220606 17:16:28.760"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['economiceventcount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.760" endtime="20220606 17:16:28.760"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['ipoinfocount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.760" endtime="20220606 17:16:28.760"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['splitscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.760" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['earningscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<status status="PASS" starttime="20220606 17:16:28.760" endtime="20220606 17:16:28.776"/>
+</iter>
+<iter>
+<var name="${calEvents}">{'startdatetime': '2022-06-07T00:00:00.000-04:00', 'economiceventcount': 75, 'ipoinfocount': 1, 'splitscount': 36, 'date': 7, 'month': 5, 'day': 2, 'year': 2022, 'earningscount': 21}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${calEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:28.776" level="INFO">{'startdatetime': '2022-06-07T00:00:00.000-04:00', 'economiceventcount': 75, 'ipoinfocount': 1, 'splitscount': 36, 'date': 7, 'month': 5, 'day': 2, 'year': 2022, 'earningscount': 21}</msg>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['economiceventcount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['ipoinfocount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['splitscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['earningscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</iter>
+<iter>
+<var name="${calEvents}">{'startdatetime': '2022-06-08T00:00:00.000-04:00', 'economiceventcount': 87, 'ipoinfocount': 1, 'splitscount': 8, 'date': 8, 'month': 5, 'day': 3, 'year': 2022, 'earningscount': 24}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${calEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:28.776" level="INFO">{'startdatetime': '2022-06-08T00:00:00.000-04:00', 'economiceventcount': 87, 'ipoinfocount': 1, 'splitscount': 8, 'date': 8, 'month': 5, 'day': 3, 'year': 2022, 'earningscount': 24}</msg>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['economiceventcount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['ipoinfocount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['splitscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.776"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['earningscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.792"/>
+</kw>
+<status status="PASS" starttime="20220606 17:16:28.776" endtime="20220606 17:16:28.792"/>
+</iter>
+<iter>
+<var name="${calEvents}">{'startdatetime': '2022-06-09T00:00:00.000-04:00', 'economiceventcount': 62, 'ipoinfocount': 0, 'splitscount': 3, 'date': 9, 'month': 5, 'day': 4, 'year': 2022, 'earningscount': 16}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${calEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:28.792" level="INFO">{'startdatetime': '2022-06-09T00:00:00.000-04:00', 'economiceventcount': 62, 'ipoinfocount': 0, 'splitscount': 3, 'date': 9, 'month': 5, 'day': 4, 'year': 2022, 'earningscount': 16}</msg>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['economiceventcount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['ipoinfocount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['splitscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['earningscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</iter>
+<iter>
+<var name="${calEvents}">{'startdatetime': '2022-06-10T00:00:00.000-04:00', 'economiceventcount': 74, 'ipoinfocount': 1, 'splitscount': 14, 'date': 10, 'month': 5, 'day': 5, 'year': 2022, 'earningscount': 1}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${calEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:28.792" level="INFO">{'startdatetime': '2022-06-10T00:00:00.000-04:00', 'economiceventcount': 74, 'ipoinfocount': 1, 'splitscount': 14, 'date': 10, 'month': 5, 'day': 5, 'year': 2022, 'earningscount': 1}</msg>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['economiceventcount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['ipoinfocount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['splitscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['earningscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</kw>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.792"/>
+</iter>
+<iter>
+<var name="${calEvents}">{'startdatetime': '2022-06-11T00:00:00.000-04:00', 'economiceventcount': 0, 'ipoinfocount': 0, 'splitscount': 0, 'date': 11, 'month': 5, 'day': 6, 'year': 2022, 'earningscount': 0}</var>
+<kw name="Log" library="BuiltIn">
+<arg>${calEvents}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:28.807" level="INFO">{'startdatetime': '2022-06-11T00:00:00.000-04:00', 'economiceventcount': 0, 'ipoinfocount': 0, 'splitscount': 0, 'date': 11, 'month': 5, 'day': 6, 'year': 2022, 'earningscount': 0}</msg>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.807"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['economiceventcount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.807" endtime="20220606 17:16:28.807"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['ipoinfocount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.807" endtime="20220606 17:16:28.807"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['splitscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.807" endtime="20220606 17:16:28.807"/>
+</kw>
+<kw name="Should Be True" library="BuiltIn">
+<arg>${calEvents['earningscount']} &gt;= 0</arg>
+<doc>Fails if the given condition is not true.</doc>
+<status status="PASS" starttime="20220606 17:16:28.807" endtime="20220606 17:16:28.807"/>
+</kw>
+<status status="PASS" starttime="20220606 17:16:28.792" endtime="20220606 17:16:28.807"/>
+</iter>
+<status status="PASS" starttime="20220606 17:16:28.745" endtime="20220606 17:16:28.807"/>
+</for>
+<doc>verify calendar events</doc>
+<status status="PASS" starttime="20220606 17:16:28.745" endtime="20220606 17:16:28.807"/>
+</test>
+<status status="PASS" starttime="20220606 17:14:30.361" endtime="20220606 17:16:28.807"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Seleniumyahoocalenderevents">Seleniumyahoocalenderevents</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220606 17:16:30.620" rpa="false" schemaversion="3">
+<suite id="s1" name="Reqrespostregisterunsuccessful" source="C:\Users\vanit\PycharmProjects\CassiniSystemsInterview\Tests\reqrespostregisterunsuccessful.robot">
+<test id="s1-t1" name="Verify register is unsuccesfull when supplied wrong emailid" line="9">
+<kw name="POST" library="REST">
+<var>${jsonGet}</var>
+<arg>api/register</arg>
+<arg>{ "email": "wrong.email@reqres.in", "password": "wrongpassword" }</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<msg timestamp="20220606 17:16:30.761" level="INFO">${jsonGet} = {'seconds': 0.10510599999999999, 'status': 400, 'reason': 'Bad Request', 'body': {'error': 'Note: Only defined users succeed registration'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:33 GMT', 'Conte...</msg>
+<status status="PASS" starttime="20220606 17:16:30.652" endtime="20220606 17:16:30.761"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${status}</var>
+<arg>${jsonGet}</arg>
+<arg>status</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220606 17:16:30.761" level="INFO">${status} = 400</msg>
+<status status="PASS" starttime="20220606 17:16:30.761" endtime="20220606 17:16:30.761"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status}</arg>
+<arg>400</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220606 17:16:30.777" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220606 17:16:30.777" endtime="20220606 17:16:30.777"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${jsonGet}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220606 17:16:30.777" level="INFO">${jsonGet} = {'seconds': 0.10510599999999999, 'status': 400, 'reason': 'Bad Request', 'body': {'error': 'Note: Only defined users succeed registration'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:33 GMT', 'Conte...</msg>
+<status status="PASS" starttime="20220606 17:16:30.777" endtime="20220606 17:16:30.777"/>
+</kw>
+<doc>Post login</doc>
+<status status="PASS" starttime="20220606 17:16:30.652" endtime="20220606 17:16:30.777"/>
+</test>
+<test id="s1-t2" name="Verify returned error message as invalid user" line="16">
+<kw name="Get From Dictionary" library="Collections">
+<var>${body}</var>
+<arg>${jsonGet}</arg>
+<arg>body</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220606 17:16:30.777" level="INFO">${body} = {'error': 'Note: Only defined users succeed registration'}</msg>
+<status status="PASS" starttime="20220606 17:16:30.777" endtime="20220606 17:16:30.777"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${body['error']}</arg>
+<arg>Note: Only defined users succeed registration</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220606 17:16:30.777" endtime="20220606 17:16:30.777"/>
+</kw>
+<doc>check that user information being returened are greater than zero</doc>
+<status status="PASS" starttime="20220606 17:16:30.777" endtime="20220606 17:16:30.777"/>
+</test>
+<test id="s1-t3" name="Verify register is unsuccesfull when supplied no password" line="21">
+<kw name="POST" library="REST">
+<var>${jsonGet}</var>
+<arg>api/register</arg>
+<arg>{ "email": "wrong.email@reqres.in"  }</arg>
+<tag>http</tag>
+<doc>*Sends a POST request to the endpoint.*</doc>
+<msg timestamp="20220606 17:16:30.917" level="INFO">${jsonGet} = {'seconds': 0.124469, 'status': 400, 'reason': 'Bad Request', 'body': {'error': 'Missing password'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:33 GMT', 'Content-Type': 'application/json; charset=utf...</msg>
+<status status="PASS" starttime="20220606 17:16:30.777" endtime="20220606 17:16:30.917"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${status}</var>
+<arg>${jsonGet}</arg>
+<arg>status</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220606 17:16:30.917" level="INFO">${status} = 400</msg>
+<status status="PASS" starttime="20220606 17:16:30.917" endtime="20220606 17:16:30.917"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status}</arg>
+<arg>400</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220606 17:16:30.917" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220606 17:16:30.917" endtime="20220606 17:16:30.917"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${jsonGet}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220606 17:16:30.917" level="INFO">${jsonGet} = {'seconds': 0.124469, 'status': 400, 'reason': 'Bad Request', 'body': {'error': 'Missing password'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:33 GMT', 'Content-Type': 'application/json; charset=utf...</msg>
+<status status="PASS" starttime="20220606 17:16:30.917" endtime="20220606 17:16:30.917"/>
+</kw>
+<doc>Post login</doc>
+<status status="PASS" starttime="20220606 17:16:30.777" endtime="20220606 17:16:30.917"/>
+</test>
+<test id="s1-t4" name="Verify returned error message as Missing Password" line="28">
+<kw name="Get From Dictionary" library="Collections">
+<var>${body}</var>
+<arg>${jsonGet}</arg>
+<arg>body</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220606 17:16:30.917" level="INFO">${body} = {'error': 'Missing password'}</msg>
+<status status="PASS" starttime="20220606 17:16:30.917" endtime="20220606 17:16:30.917"/>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<arg>${body['error']}</arg>
+<arg>Missing password</arg>
+<doc>Fails if the given objects are unequal.</doc>
+<status status="PASS" starttime="20220606 17:16:30.917" endtime="20220606 17:16:30.917"/>
+</kw>
+<doc>check that user information being returened are greater than zero</doc>
+<status status="PASS" starttime="20220606 17:16:30.917" endtime="20220606 17:16:30.917"/>
+</test>
+<status status="PASS" starttime="20220606 17:16:30.620" endtime="20220606 17:16:30.917"/>
+</suite>
+<statistics>
+<total>
+<stat pass="4" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="4" fail="0" skip="0" id="s1" name="Reqrespostregisterunsuccessful">Reqrespostregisterunsuccessful</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

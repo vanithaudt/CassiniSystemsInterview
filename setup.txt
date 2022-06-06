@@ -1,0 +1,11 @@
+main
+1. install python
+2. install chrome driver
+
+pip install the below
+1. robotframework-requests
+2. robotframework-jsonlibrary
+3. selenium
+4. BeautifulSoup4
+
+

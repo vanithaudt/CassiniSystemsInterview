@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220606 17:16:32.402" rpa="false" schemaversion="3">
+<suite id="s1" name="Reqresdelete" source="C:\Users\vanit\PycharmProjects\CassiniSystemsInterview\Tests\reqresdelete.robot">
+<test id="s1-t1" name="Verify PUT Update  is Successful" line="10">
+<kw name="DELETE" library="REST">
+<var>${jsonGet}</var>
+<arg>api/users/2</arg>
+<tag>http</tag>
+<doc>*Sends a DELETE request to the endpoint.*</doc>
+<msg timestamp="20220606 17:16:32.543" level="INFO">${jsonGet} = {'seconds': 0.092477, 'status': 204, 'reason': 'No Content', 'body': '', 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:35 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Expres...</msg>
+<status status="PASS" starttime="20220606 17:16:32.449" endtime="20220606 17:16:32.543"/>
+</kw>
+<kw name="Log" library="BuiltIn">
+<arg>${jsonGet}</arg>
+<doc>Logs the given message with the given level.</doc>
+<msg timestamp="20220606 17:16:32.543" level="INFO">{'seconds': 0.092477, 'status': 204, 'reason': 'No Content', 'body': '', 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:35 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Express', 'Access-Control-Allow-Origin': '*', 'Etag': 'W/"2-vyGp6PvFo4RvsFtPoIWeCReyIC8"', 'Via': '1.1 vegur', 'CF-Cache-Status': 'DYNAMIC', 'Expect-CT': 'max-age=604800, report-uri="https://report-uri.cloudflare.com/cdn-cgi/beacon/expect-ct"', 'Report-To': '{"endpoints":[{"url":"https:\\/\\/a.nel.cloudflare.com\\/report\\/v3?s=2SlLEIQ4vqMzTqmXKRQRr61ZEuCW7n%2B7s%2B1DPfUJNK7cFF8RlLKeSySZgtoW7MoQo7s1T50UsKTOQKQp8xF9bkEpxUTK1WTanRvoAkecqvsKWCT%2FHY5WvuGHtVZboVoYj0uv5fNBM8Q%3D"}],"group":"cf-nel","max_age":604800}', 'NEL': '{"success_fraction":0,"report_to":"cf-nel","max_age":604800}', 'Server': 'cloudflare', 'CF-RAY': '7172740a8d53770b-LHR', 'alt-svc': 'h3=":443"; ma=86400, h3-29=":443"; ma=86400'}}</msg>
+<status status="PASS" starttime="20220606 17:16:32.543" endtime="20220606 17:16:32.543"/>
+</kw>
+<kw name="Get From Dictionary" library="Collections">
+<var>${status}</var>
+<arg>${jsonGet}</arg>
+<arg>status</arg>
+<doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
+<msg timestamp="20220606 17:16:32.543" level="INFO">${status} = 204</msg>
+<status status="PASS" starttime="20220606 17:16:32.543" endtime="20220606 17:16:32.543"/>
+</kw>
+<kw name="Should Be Equal As Strings" library="BuiltIn">
+<arg>${status}</arg>
+<arg>204</arg>
+<doc>Fails if objects are unequal after converting them to strings.</doc>
+<msg timestamp="20220606 17:16:32.543" level="INFO">Argument types are:
+&lt;class 'int'&gt;
+&lt;class 'str'&gt;</msg>
+<status status="PASS" starttime="20220606 17:16:32.543" endtime="20220606 17:16:32.543"/>
+</kw>
+<kw name="Set Suite Variable" library="BuiltIn">
+<arg>${jsonGet}</arg>
+<doc>Makes a variable available everywhere within the scope of the current suite.</doc>
+<msg timestamp="20220606 17:16:32.559" level="INFO">${jsonGet} = {'seconds': 0.092477, 'status': 204, 'reason': 'No Content', 'body': '', 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:35 GMT', 'Content-Length': '0', 'Connection': 'keep-alive', 'X-Powered-By': 'Expres...</msg>
+<status status="PASS" starttime="20220606 17:16:32.543" endtime="20220606 17:16:32.559"/>
+</kw>
+<doc>DELETE Update</doc>
+<status status="PASS" starttime="20220606 17:16:32.449" endtime="20220606 17:16:32.559"/>
+</test>
+<status status="PASS" starttime="20220606 17:16:32.402" endtime="20220606 17:16:32.559"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Reqresdelete">Reqresdelete</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

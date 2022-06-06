@@ -7,6 +7,7 @@ Read
 
 3. Tests -
     1. SeleniumYahooCalenderEvents.robot - covers the exercise 2 and JSON file  formatting
+       1. SeleniumYahooLoginWithExcelCredentials - read from excel credentials and pass it in the tests
     2. ReqRes tests are REST API testing with ROBOT framework with Robot Instance library
         1. ReqResDelete for DELETE operation
         2. ReqResGetLit for GET operation

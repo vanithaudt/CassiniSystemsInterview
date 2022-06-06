@@ -5,8 +5,8 @@
 
 *** Test Cases ***
 
-|  setup driver |
-|    | [Documentation] | setup driver |
+|  Test Steps Retreive Market Data Calendar Events |
+|    | [Documentation] |  Test Steps Retreive Market Data Calendar Events |
 |    | setup driver | driverpath=C:/Users/vanit/Downloads/chromedriver_win32/chromedriver.exe |
 |    | login |
 |    | goto market data |

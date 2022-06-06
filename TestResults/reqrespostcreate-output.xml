@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220606 17:16:30.980" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220607 00:23:58.056" rpa="false" schemaversion="3">
 <suite id="s1" name="Reqrespostcreate" source="C:\Users\vanit\PycharmProjects\CassiniSystemsInterview\Tests\reqrespostcreate.robot">
 <test id="s1-t1" name="Verify Post Create is Successful" line="10">
 <kw name="POST" library="REST">
@@ -8,34 +8,34 @@
 <arg>{ "name":"morpheus", "password":"leader" }</arg>
 <tag>http</tag>
 <doc>*Sends a POST request to the endpoint.*</doc>
-<msg timestamp="20220606 17:16:31.167" level="INFO">${jsonGet} = {'seconds': 0.112998, 'status': 201, 'reason': 'Created', 'body': {'name': 'morpheus', 'password': 'leader', 'id': '149', 'createdAt': '2022-06-06T16:16:33.615Z'}, 'headers': {'Date': 'Mon, 06 Jun 202...</msg>
-<status status="PASS" starttime="20220606 17:16:31.042" endtime="20220606 17:16:31.167"/>
+<msg timestamp="20220607 00:23:58.227" level="INFO">${jsonGet} = {'seconds': 0.097163, 'status': 201, 'reason': 'Created', 'body': {'name': 'morpheus', 'password': 'leader', 'id': '386', 'createdAt': '2022-06-06T23:23:58.393Z'}, 'headers': {'Date': 'Mon, 06 Jun 202...</msg>
+<status status="PASS" starttime="20220607 00:23:58.126" endtime="20220607 00:23:58.227"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${status}</var>
 <arg>${jsonGet}</arg>
 <arg>status</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.167" level="INFO">${status} = 201</msg>
-<status status="PASS" starttime="20220606 17:16:31.167" endtime="20220606 17:16:31.167"/>
+<msg timestamp="20220607 00:23:58.228" level="INFO">${status} = 201</msg>
+<status status="PASS" starttime="20220607 00:23:58.227" endtime="20220607 00:23:58.228"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${status}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220606 17:16:31.167" level="INFO">Argument types are:
+<msg timestamp="20220607 00:23:58.229" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220606 17:16:31.167" endtime="20220606 17:16:31.167"/>
+<status status="PASS" starttime="20220607 00:23:58.228" endtime="20220607 00:23:58.229"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${jsonGet}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20220606 17:16:31.167" level="INFO">${jsonGet} = {'seconds': 0.112998, 'status': 201, 'reason': 'Created', 'body': {'name': 'morpheus', 'password': 'leader', 'id': '149', 'createdAt': '2022-06-06T16:16:33.615Z'}, 'headers': {'Date': 'Mon, 06 Jun 202...</msg>
-<status status="PASS" starttime="20220606 17:16:31.167" endtime="20220606 17:16:31.167"/>
+<msg timestamp="20220607 00:23:58.230" level="INFO">${jsonGet} = {'seconds': 0.097163, 'status': 201, 'reason': 'Created', 'body': {'name': 'morpheus', 'password': 'leader', 'id': '386', 'createdAt': '2022-06-06T23:23:58.393Z'}, 'headers': {'Date': 'Mon, 06 Jun 202...</msg>
+<status status="PASS" starttime="20220607 00:23:58.229" endtime="20220607 00:23:58.230"/>
 </kw>
 <doc>Post Create</doc>
-<status status="PASS" starttime="20220606 17:16:31.042" endtime="20220606 17:16:31.183"/>
+<status status="PASS" starttime="20220607 00:23:58.125" endtime="20220607 00:23:58.230"/>
 </test>
 <test id="s1-t2" name="Verify the token, name, password, id are valid" line="17">
 <kw name="Get From Dictionary" library="Collections">
@@ -43,49 +43,50 @@
 <arg>${jsonGet}</arg>
 <arg>body</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.183" level="INFO">${body} = {'name': 'morpheus', 'password': 'leader', 'id': '149', 'createdAt': '2022-06-06T16:16:33.615Z'}</msg>
-<status status="PASS" starttime="20220606 17:16:31.183" endtime="20220606 17:16:31.183"/>
+<msg timestamp="20220607 00:23:58.231" level="INFO">${body} = {'name': 'morpheus', 'password': 'leader', 'id': '386', 'createdAt': '2022-06-06T23:23:58.393Z'}</msg>
+<status status="PASS" starttime="20220607 00:23:58.231" endtime="20220607 00:23:58.231"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['name']}</arg>
 <arg>morpheus</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.183" endtime="20220606 17:16:31.183"/>
+<status status="PASS" starttime="20220607 00:23:58.232" endtime="20220607 00:23:58.232"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['password']}</arg>
 <arg>leader</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.183" endtime="20220606 17:16:31.198"/>
+<status status="PASS" starttime="20220607 00:23:58.233" endtime="20220607 00:23:58.233"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <arg>${body['id']}  &gt; 0</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" starttime="20220606 17:16:31.198" endtime="20220606 17:16:31.198"/>
+<status status="PASS" starttime="20220607 00:23:58.233" endtime="20220607 00:23:58.234"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${date}</var>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220606 17:16:31.198" level="INFO">${date} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.198" endtime="20220606 17:16:31.198"/>
+<msg timestamp="20220607 00:23:58.235" level="INFO">${date} = 2022-06-07</msg>
+<status status="PASS" starttime="20220607 00:23:58.234" endtime="20220607 00:23:58.235"/>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <var>${returneddate}</var>
 <arg>${body['createdAt']}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<msg timestamp="20220606 17:16:31.214" level="INFO">${returneddate} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.198" endtime="20220606 17:16:31.214"/>
+<msg timestamp="20220607 00:23:58.246" level="INFO">${returneddate} = 2022-06-06</msg>
+<status status="PASS" starttime="20220607 00:23:58.235" endtime="20220607 00:23:58.246"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${date}</arg>
 <arg>${returneddate}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.214" endtime="20220606 17:16:31.214"/>
+<msg timestamp="20220607 00:23:58.247" level="FAIL">2022-06-07 != 2022-06-06</msg>
+<status status="FAIL" starttime="20220607 00:23:58.246" endtime="20220607 00:23:58.248"/>
 </kw>
 <doc>create operation is successful</doc>
-<status status="PASS" starttime="20220606 17:16:31.183" endtime="20220606 17:16:31.214"/>
+<status status="FAIL" starttime="20220607 00:23:58.230" endtime="20220607 00:23:58.248">2022-06-07 != 2022-06-06</status>
 </test>
 <test id="s1-t3" name="Verify Post Create is Successful for anothe user" line="28">
 <kw name="POST" library="REST">
@@ -94,34 +95,34 @@
 <arg>{ "name":"vanitha", "password":"leader" }</arg>
 <tag>http</tag>
 <doc>*Sends a POST request to the endpoint.*</doc>
-<msg timestamp="20220606 17:16:31.323" level="INFO">${jsonGet} = {'seconds': 0.099088, 'status': 201, 'reason': 'Created', 'body': {'name': 'vanitha', 'password': 'leader', 'id': '832', 'createdAt': '2022-06-06T16:16:33.773Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022...</msg>
-<status status="PASS" starttime="20220606 17:16:31.214" endtime="20220606 17:16:31.323"/>
+<msg timestamp="20220607 00:23:58.370" level="INFO">${jsonGet} = {'seconds': 0.11419199999999999, 'status': 201, 'reason': 'Created', 'body': {'name': 'vanitha', 'password': 'leader', 'id': '332', 'createdAt': '2022-06-06T23:23:58.524Z'}, 'headers': {'Date': 'Mon, ...</msg>
+<status status="PASS" starttime="20220607 00:23:58.250" endtime="20220607 00:23:58.370"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${status}</var>
 <arg>${jsonGet}</arg>
 <arg>status</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.323" level="INFO">${status} = 201</msg>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<msg timestamp="20220607 00:23:58.371" level="INFO">${status} = 201</msg>
+<status status="PASS" starttime="20220607 00:23:58.371" endtime="20220607 00:23:58.371"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${status}</arg>
 <arg>201</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220606 17:16:31.323" level="INFO">Argument types are:
+<msg timestamp="20220607 00:23:58.371" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<status status="PASS" starttime="20220607 00:23:58.371" endtime="20220607 00:23:58.371"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${jsonGet}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20220606 17:16:31.323" level="INFO">${jsonGet} = {'seconds': 0.099088, 'status': 201, 'reason': 'Created', 'body': {'name': 'vanitha', 'password': 'leader', 'id': '832', 'createdAt': '2022-06-06T16:16:33.773Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022...</msg>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<msg timestamp="20220607 00:23:58.372" level="INFO">${jsonGet} = {'seconds': 0.11419199999999999, 'status': 201, 'reason': 'Created', 'body': {'name': 'vanitha', 'password': 'leader', 'id': '332', 'createdAt': '2022-06-06T23:23:58.524Z'}, 'headers': {'Date': 'Mon, ...</msg>
+<status status="PASS" starttime="20220607 00:23:58.371" endtime="20220607 00:23:58.372"/>
 </kw>
 <doc>Post Create</doc>
-<status status="PASS" starttime="20220606 17:16:31.214" endtime="20220606 17:16:31.323"/>
+<status status="PASS" starttime="20220607 00:23:58.249" endtime="20220607 00:23:58.372"/>
 </test>
 <test id="s1-t4" name="Verify the token, name, password, id are valid for 2nd user" line="35">
 <kw name="Get From Dictionary" library="Collections">
@@ -129,60 +130,61 @@
 <arg>${jsonGet}</arg>
 <arg>body</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.323" level="INFO">${body} = {'name': 'vanitha', 'password': 'leader', 'id': '832', 'createdAt': '2022-06-06T16:16:33.773Z'}</msg>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<msg timestamp="20220607 00:23:58.373" level="INFO">${body} = {'name': 'vanitha', 'password': 'leader', 'id': '332', 'createdAt': '2022-06-06T23:23:58.524Z'}</msg>
+<status status="PASS" starttime="20220607 00:23:58.373" endtime="20220607 00:23:58.373"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['name']}</arg>
 <arg>vanitha</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<status status="PASS" starttime="20220607 00:23:58.373" endtime="20220607 00:23:58.374"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['password']}</arg>
 <arg>leader</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<status status="PASS" starttime="20220607 00:23:58.374" endtime="20220607 00:23:58.375"/>
 </kw>
 <kw name="Evaluate" library="BuiltIn">
 <arg>${body['id']}  &gt; 0</arg>
 <doc>Evaluates the given expression in Python and returns the result.</doc>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<status status="PASS" starttime="20220607 00:23:58.375" endtime="20220607 00:23:58.376"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${date}</var>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220606 17:16:31.323" level="INFO">${date} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.323"/>
+<msg timestamp="20220607 00:23:58.376" level="INFO">${date} = 2022-06-07</msg>
+<status status="PASS" starttime="20220607 00:23:58.376" endtime="20220607 00:23:58.376"/>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <var>${returneddate}</var>
 <arg>${body['createdAt']}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<msg timestamp="20220606 17:16:31.339" level="INFO">${returneddate} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.339"/>
+<msg timestamp="20220607 00:23:58.377" level="INFO">${returneddate} = 2022-06-06</msg>
+<status status="PASS" starttime="20220607 00:23:58.376" endtime="20220607 00:23:58.377"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${date}</arg>
 <arg>${returneddate}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.339" endtime="20220606 17:16:31.339"/>
+<msg timestamp="20220607 00:23:58.378" level="FAIL">2022-06-07 != 2022-06-06</msg>
+<status status="FAIL" starttime="20220607 00:23:58.377" endtime="20220607 00:23:58.378"/>
 </kw>
 <doc>create operation is successful</doc>
-<status status="PASS" starttime="20220606 17:16:31.323" endtime="20220606 17:16:31.339"/>
+<status status="FAIL" starttime="20220607 00:23:58.372" endtime="20220607 00:23:58.378">2022-06-07 != 2022-06-06</status>
 </test>
-<status status="PASS" starttime="20220606 17:16:30.980" endtime="20220606 17:16:31.339"/>
+<status status="FAIL" starttime="20220607 00:23:58.058" endtime="20220607 00:23:58.379"/>
 </suite>
 <statistics>
 <total>
-<stat pass="4" fail="0" skip="0">All Tests</stat>
+<stat pass="2" fail="2" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="4" fail="0" skip="0" id="s1" name="Reqrespostcreate">Reqrespostcreate</stat>
+<stat pass="2" fail="2" skip="0" id="s1" name="Reqrespostcreate">Reqrespostcreate</stat>
 </suite>
 </statistics>
 <errors>

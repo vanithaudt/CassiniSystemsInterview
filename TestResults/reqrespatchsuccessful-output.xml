@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220606 17:16:31.401" rpa="false" schemaversion="3">
+<robot generator="Robot 5.0.1 (Python 3.10.4 on win32)" generated="20220607 00:23:58.444" rpa="false" schemaversion="3">
 <suite id="s1" name="Reqrespatchsuccessful" source="C:\Users\vanit\PycharmProjects\CassiniSystemsInterview\Tests\reqrespatchsuccessful.robot">
 <test id="s1-t1" name="Verify Patch Update  is Successful" line="10">
 <kw name="PATCH" library="REST">
@@ -8,34 +8,34 @@
 <arg>{ "name":"morpheus", "job":"zion resident" }</arg>
 <tag>http</tag>
 <doc>*Sends a PATCH request to the endpoint.*</doc>
-<msg timestamp="20220606 17:16:31.527" level="INFO">${jsonGet} = {'seconds': 0.091056, 'status': 200, 'reason': 'OK', 'body': {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2022-06-06T16:16:33.985Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:33 GMT',...</msg>
-<status status="PASS" starttime="20220606 17:16:31.433" endtime="20220606 17:16:31.527"/>
+<msg timestamp="20220607 00:23:58.605" level="INFO">${jsonGet} = {'seconds': 0.097334, 'status': 200, 'reason': 'OK', 'body': {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2022-06-06T23:23:58.773Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 23:23:58 GMT',...</msg>
+<status status="PASS" starttime="20220607 00:23:58.504" endtime="20220607 00:23:58.605"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${status}</var>
 <arg>${jsonGet}</arg>
 <arg>status</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.527" level="INFO">${status} = 200</msg>
-<status status="PASS" starttime="20220606 17:16:31.527" endtime="20220606 17:16:31.527"/>
+<msg timestamp="20220607 00:23:58.605" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20220607 00:23:58.605" endtime="20220607 00:23:58.606"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${status}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220606 17:16:31.527" level="INFO">Argument types are:
+<msg timestamp="20220607 00:23:58.606" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220606 17:16:31.527" endtime="20220606 17:16:31.527"/>
+<status status="PASS" starttime="20220607 00:23:58.606" endtime="20220607 00:23:58.606"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${jsonGet}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20220606 17:16:31.527" level="INFO">${jsonGet} = {'seconds': 0.091056, 'status': 200, 'reason': 'OK', 'body': {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2022-06-06T16:16:33.985Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:33 GMT',...</msg>
-<status status="PASS" starttime="20220606 17:16:31.527" endtime="20220606 17:16:31.527"/>
+<msg timestamp="20220607 00:23:58.606" level="INFO">${jsonGet} = {'seconds': 0.097334, 'status': 200, 'reason': 'OK', 'body': {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2022-06-06T23:23:58.773Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 23:23:58 GMT',...</msg>
+<status status="PASS" starttime="20220607 00:23:58.606" endtime="20220607 00:23:58.607"/>
 </kw>
 <doc>Patch Update</doc>
-<status status="PASS" starttime="20220606 17:16:31.433" endtime="20220606 17:16:31.527"/>
+<status status="PASS" starttime="20220607 00:23:58.503" endtime="20220607 00:23:58.607"/>
 </test>
 <test id="s1-t2" name="Verify the name, job, update are valid" line="17">
 <kw name="Get From Dictionary" library="Collections">
@@ -43,44 +43,45 @@
 <arg>${jsonGet}</arg>
 <arg>body</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.542" level="INFO">${body} = {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2022-06-06T16:16:33.985Z'}</msg>
-<status status="PASS" starttime="20220606 17:16:31.527" endtime="20220606 17:16:31.542"/>
+<msg timestamp="20220607 00:23:58.608" level="INFO">${body} = {'name': 'morpheus', 'job': 'zion resident', 'updatedAt': '2022-06-06T23:23:58.773Z'}</msg>
+<status status="PASS" starttime="20220607 00:23:58.608" endtime="20220607 00:23:58.608"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['name']}</arg>
 <arg>morpheus</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.542" endtime="20220606 17:16:31.542"/>
+<status status="PASS" starttime="20220607 00:23:58.608" endtime="20220607 00:23:58.610"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['job']}</arg>
 <arg>zion resident</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.542" endtime="20220606 17:16:31.542"/>
+<status status="PASS" starttime="20220607 00:23:58.610" endtime="20220607 00:23:58.611"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${date}</var>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220606 17:16:31.542" level="INFO">${date} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.542" endtime="20220606 17:16:31.542"/>
+<msg timestamp="20220607 00:23:58.612" level="INFO">${date} = 2022-06-07</msg>
+<status status="PASS" starttime="20220607 00:23:58.611" endtime="20220607 00:23:58.612"/>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <var>${returneddate}</var>
 <arg>${body['updatedAt']}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<msg timestamp="20220606 17:16:31.542" level="INFO">${returneddate} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.542" endtime="20220606 17:16:31.542"/>
+<msg timestamp="20220607 00:23:58.613" level="INFO">${returneddate} = 2022-06-06</msg>
+<status status="PASS" starttime="20220607 00:23:58.612" endtime="20220607 00:23:58.614"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${date}</arg>
 <arg>${returneddate}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.542" endtime="20220606 17:16:31.542"/>
+<msg timestamp="20220607 00:23:58.615" level="FAIL">2022-06-07 != 2022-06-06</msg>
+<status status="FAIL" starttime="20220607 00:23:58.614" endtime="20220607 00:23:58.615"/>
 </kw>
 <doc>create operation is successful</doc>
-<status status="PASS" starttime="20220606 17:16:31.527" endtime="20220606 17:16:31.542"/>
+<status status="FAIL" starttime="20220607 00:23:58.607" endtime="20220607 00:23:58.616">2022-06-07 != 2022-06-06</status>
 </test>
 <test id="s1-t3" name="Verify Patch Update  is Successful for anothe user" line="26">
 <kw name="PATCH" library="REST">
@@ -89,34 +90,34 @@
 <arg>{ "name":"vanitha", "job":"tester" }</arg>
 <tag>http</tag>
 <doc>*Sends a PATCH request to the endpoint.*</doc>
-<msg timestamp="20220606 17:16:31.667" level="INFO">${jsonGet} = {'seconds': 0.118272, 'status': 200, 'reason': 'OK', 'body': {'name': 'vanitha', 'job': 'tester', 'updatedAt': '2022-06-06T16:16:34.113Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:34 GMT', 'Conten...</msg>
-<status status="PASS" starttime="20220606 17:16:31.542" endtime="20220606 17:16:31.667"/>
+<msg timestamp="20220607 00:23:58.724" level="INFO">${jsonGet} = {'seconds': 0.099951, 'status': 200, 'reason': 'OK', 'body': {'name': 'vanitha', 'job': 'tester', 'updatedAt': '2022-06-06T23:23:58.890Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 23:23:58 GMT', 'Conten...</msg>
+<status status="PASS" starttime="20220607 00:23:58.618" endtime="20220607 00:23:58.724"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${status}</var>
 <arg>${jsonGet}</arg>
 <arg>status</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.667" level="INFO">${status} = 200</msg>
-<status status="PASS" starttime="20220606 17:16:31.667" endtime="20220606 17:16:31.667"/>
+<msg timestamp="20220607 00:23:58.724" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20220607 00:23:58.724" endtime="20220607 00:23:58.724"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${status}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220606 17:16:31.667" level="INFO">Argument types are:
+<msg timestamp="20220607 00:23:58.725" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220606 17:16:31.667" endtime="20220606 17:16:31.667"/>
+<status status="PASS" starttime="20220607 00:23:58.724" endtime="20220607 00:23:58.725"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${jsonGet}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20220606 17:16:31.667" level="INFO">${jsonGet} = {'seconds': 0.118272, 'status': 200, 'reason': 'OK', 'body': {'name': 'vanitha', 'job': 'tester', 'updatedAt': '2022-06-06T16:16:34.113Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:34 GMT', 'Conten...</msg>
-<status status="PASS" starttime="20220606 17:16:31.667" endtime="20220606 17:16:31.667"/>
+<msg timestamp="20220607 00:23:58.725" level="INFO">${jsonGet} = {'seconds': 0.099951, 'status': 200, 'reason': 'OK', 'body': {'name': 'vanitha', 'job': 'tester', 'updatedAt': '2022-06-06T23:23:58.890Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 23:23:58 GMT', 'Conten...</msg>
+<status status="PASS" starttime="20220607 00:23:58.725" endtime="20220607 00:23:58.725"/>
 </kw>
 <doc>Patch Update</doc>
-<status status="PASS" starttime="20220606 17:16:31.542" endtime="20220606 17:16:31.667"/>
+<status status="PASS" starttime="20220607 00:23:58.617" endtime="20220607 00:23:58.726"/>
 </test>
 <test id="s1-t4" name="Verify the token, name, password, id are valid for 2nd user" line="33">
 <kw name="Get From Dictionary" library="Collections">
@@ -124,44 +125,45 @@
 <arg>${jsonGet}</arg>
 <arg>body</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.667" level="INFO">${body} = {'name': 'vanitha', 'job': 'tester', 'updatedAt': '2022-06-06T16:16:34.113Z'}</msg>
-<status status="PASS" starttime="20220606 17:16:31.667" endtime="20220606 17:16:31.667"/>
+<msg timestamp="20220607 00:23:58.727" level="INFO">${body} = {'name': 'vanitha', 'job': 'tester', 'updatedAt': '2022-06-06T23:23:58.890Z'}</msg>
+<status status="PASS" starttime="20220607 00:23:58.727" endtime="20220607 00:23:58.727"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['name']}</arg>
 <arg>vanitha</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.667" endtime="20220606 17:16:31.683"/>
+<status status="PASS" starttime="20220607 00:23:58.728" endtime="20220607 00:23:58.729"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['job']}</arg>
 <arg>tester</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.683" endtime="20220606 17:16:31.683"/>
+<status status="PASS" starttime="20220607 00:23:58.729" endtime="20220607 00:23:58.730"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${date}</var>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220606 17:16:31.683" level="INFO">${date} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.683" endtime="20220606 17:16:31.683"/>
+<msg timestamp="20220607 00:23:58.731" level="INFO">${date} = 2022-06-07</msg>
+<status status="PASS" starttime="20220607 00:23:58.730" endtime="20220607 00:23:58.731"/>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <var>${returneddate}</var>
 <arg>${body['updatedAt']}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<msg timestamp="20220606 17:16:31.683" level="INFO">${returneddate} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.683" endtime="20220606 17:16:31.683"/>
+<msg timestamp="20220607 00:23:58.732" level="INFO">${returneddate} = 2022-06-06</msg>
+<status status="PASS" starttime="20220607 00:23:58.731" endtime="20220607 00:23:58.732"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${date}</arg>
 <arg>${returneddate}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.683" endtime="20220606 17:16:31.683"/>
+<msg timestamp="20220607 00:23:58.733" level="FAIL">2022-06-07 != 2022-06-06</msg>
+<status status="FAIL" starttime="20220607 00:23:58.732" endtime="20220607 00:23:58.733"/>
 </kw>
 <doc>create operation is successful</doc>
-<status status="PASS" starttime="20220606 17:16:31.667" endtime="20220606 17:16:31.683"/>
+<status status="FAIL" starttime="20220607 00:23:58.726" endtime="20220607 00:23:58.733">2022-06-07 != 2022-06-06</status>
 </test>
 <test id="s1-t5" name="Verify Patch Update  is Successful for anothe user random user" line="43">
 <kw name="PATCH" library="REST">
@@ -170,34 +172,34 @@
 <arg>{ "name":"abcddfasdf", "job":"tester" }</arg>
 <tag>http</tag>
 <doc>*Sends a PATCH request to the endpoint.*</doc>
-<msg timestamp="20220606 17:16:31.792" level="INFO">${jsonGet} = {'seconds': 0.10070699999999999, 'status': 200, 'reason': 'OK', 'body': {'name': 'abcddfasdf', 'job': 'tester', 'updatedAt': '2022-06-06T16:16:34.239Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:34...</msg>
-<status status="PASS" starttime="20220606 17:16:31.683" endtime="20220606 17:16:31.792"/>
+<msg timestamp="20220607 00:23:58.854" level="INFO">${jsonGet} = {'seconds': 0.11447199999999999, 'status': 200, 'reason': 'OK', 'body': {'name': 'abcddfasdf', 'job': 'tester', 'updatedAt': '2022-06-06T23:23:59.020Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 23:23:59...</msg>
+<status status="PASS" starttime="20220607 00:23:58.734" endtime="20220607 00:23:58.855"/>
 </kw>
 <kw name="Get From Dictionary" library="Collections">
 <var>${status}</var>
 <arg>${jsonGet}</arg>
 <arg>status</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.792" level="INFO">${status} = 200</msg>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<msg timestamp="20220607 00:23:58.855" level="INFO">${status} = 200</msg>
+<status status="PASS" starttime="20220607 00:23:58.855" endtime="20220607 00:23:58.855"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${status}</arg>
 <arg>200</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<msg timestamp="20220606 17:16:31.792" level="INFO">Argument types are:
+<msg timestamp="20220607 00:23:58.855" level="INFO">Argument types are:
 &lt;class 'int'&gt;
 &lt;class 'str'&gt;</msg>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<status status="PASS" starttime="20220607 00:23:58.855" endtime="20220607 00:23:58.856"/>
 </kw>
 <kw name="Set Suite Variable" library="BuiltIn">
 <arg>${jsonGet}</arg>
 <doc>Makes a variable available everywhere within the scope of the current suite.</doc>
-<msg timestamp="20220606 17:16:31.792" level="INFO">${jsonGet} = {'seconds': 0.10070699999999999, 'status': 200, 'reason': 'OK', 'body': {'name': 'abcddfasdf', 'job': 'tester', 'updatedAt': '2022-06-06T16:16:34.239Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 16:16:34...</msg>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<msg timestamp="20220607 00:23:58.856" level="INFO">${jsonGet} = {'seconds': 0.11447199999999999, 'status': 200, 'reason': 'OK', 'body': {'name': 'abcddfasdf', 'job': 'tester', 'updatedAt': '2022-06-06T23:23:59.020Z'}, 'headers': {'Date': 'Mon, 06 Jun 2022 23:23:59...</msg>
+<status status="PASS" starttime="20220607 00:23:58.856" endtime="20220607 00:23:58.856"/>
 </kw>
 <doc>Patch Update</doc>
-<status status="PASS" starttime="20220606 17:16:31.683" endtime="20220606 17:16:31.792"/>
+<status status="PASS" starttime="20220607 00:23:58.733" endtime="20220607 00:23:58.856"/>
 </test>
 <test id="s1-t6" name="Verify the token, name, password, id are valid for random user" line="50">
 <kw name="Get From Dictionary" library="Collections">
@@ -205,55 +207,56 @@
 <arg>${jsonGet}</arg>
 <arg>body</arg>
 <doc>Returns a value from the given ``dictionary`` based on the given ``key``.</doc>
-<msg timestamp="20220606 17:16:31.792" level="INFO">${body} = {'name': 'abcddfasdf', 'job': 'tester', 'updatedAt': '2022-06-06T16:16:34.239Z'}</msg>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<msg timestamp="20220607 00:23:58.858" level="INFO">${body} = {'name': 'abcddfasdf', 'job': 'tester', 'updatedAt': '2022-06-06T23:23:59.020Z'}</msg>
+<status status="PASS" starttime="20220607 00:23:58.857" endtime="20220607 00:23:58.858"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['name']}</arg>
 <arg>abcddfasdf</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<status status="PASS" starttime="20220607 00:23:58.858" endtime="20220607 00:23:58.859"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${body['job']}</arg>
 <arg>tester</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<status status="PASS" starttime="20220607 00:23:58.859" endtime="20220607 00:23:58.860"/>
 </kw>
 <kw name="Get Current Date" library="DateTime">
 <var>${date}</var>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Returns current local or UTC time with an optional increment.</doc>
-<msg timestamp="20220606 17:16:31.792" level="INFO">${date} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<msg timestamp="20220607 00:23:58.861" level="INFO">${date} = 2022-06-07</msg>
+<status status="PASS" starttime="20220607 00:23:58.860" endtime="20220607 00:23:58.861"/>
 </kw>
 <kw name="Convert Date" library="DateTime">
 <var>${returneddate}</var>
 <arg>${body['updatedAt']}</arg>
 <arg>result_format=%Y-%m-%d</arg>
 <doc>Converts between supported `date formats`.</doc>
-<msg timestamp="20220606 17:16:31.792" level="INFO">${returneddate} = 2022-06-06</msg>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<msg timestamp="20220607 00:23:58.863" level="INFO">${returneddate} = 2022-06-06</msg>
+<status status="PASS" starttime="20220607 00:23:58.861" endtime="20220607 00:23:58.863"/>
 </kw>
 <kw name="Should Be Equal" library="BuiltIn">
 <arg>${date}</arg>
 <arg>${returneddate}</arg>
 <doc>Fails if the given objects are unequal.</doc>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<msg timestamp="20220607 00:23:58.864" level="FAIL">2022-06-07 != 2022-06-06</msg>
+<status status="FAIL" starttime="20220607 00:23:58.863" endtime="20220607 00:23:58.864"/>
 </kw>
 <doc>create operation is successful</doc>
-<status status="PASS" starttime="20220606 17:16:31.792" endtime="20220606 17:16:31.792"/>
+<status status="FAIL" starttime="20220607 00:23:58.857" endtime="20220607 00:23:58.865">2022-06-07 != 2022-06-06</status>
 </test>
-<status status="PASS" starttime="20220606 17:16:31.401" endtime="20220606 17:16:31.808"/>
+<status status="FAIL" starttime="20220607 00:23:58.446" endtime="20220607 00:23:58.865"/>
 </suite>
 <statistics>
 <total>
-<stat pass="6" fail="0" skip="0">All Tests</stat>
+<stat pass="3" fail="3" skip="0">All Tests</stat>
 </total>
 <tag>
 </tag>
 <suite>
-<stat pass="6" fail="0" skip="0" id="s1" name="Reqrespatchsuccessful">Reqrespatchsuccessful</stat>
+<stat pass="3" fail="3" skip="0" id="s1" name="Reqrespatchsuccessful">Reqrespatchsuccessful</stat>
 </suite>
 </statistics>
 <errors>
